@@ -39,14 +39,13 @@ body{
    margin-bottom: 1.5rem;
    margin-left: auto;
    margin-right: auto;
-   width: 70vw;
+   width: 40vw;
 }
 /* adds background colour, visible border, padding, and margins to .title*/
 
 section{
    background-color: var(--backgroundcol);
    border:1px solid var(--tertiarycol);
-   margin: 1rem;
    padding: 1rem;
 }
 /* resulting margins between h2 sections collapse into 1rem, not 1+1rem margins. */
@@ -55,14 +54,15 @@ h1{
    color: var(--primarycol);
    text-align: center;
    font-family: var(--headingfont);
-   font-size: 3rem;
+   font-size: 2rem;
    line-height: 1.2;
    text-wrap: balance;
+   padding: 5px;
 }
 
 h2{
    color: var(--secondarycol);
-   font-size: 2rem;
+   font-size: 1.7rem;
    line-height: 1.2;
    text-wrap: balance;
 }
@@ -70,10 +70,6 @@ h2{
 
 .intro{
    font-size: 18px;
-}
-
-#summit{
-   color: #150D05;
 }
 
 p{
@@ -86,32 +82,9 @@ img{
    width: 100%;
    margin-top: 1em;
 }
-/* sets fized aspect ratio for the image and sets width to 100 percent of its container, the container being the viewport */
-
-button{
-   background-color: var(--secondarycol);
-   color: beige;
-   font-size: 1.5rem;
-   font-family: var(--bodyfont);
-}
-
-button:hover,{
-   background-color: var(--backgroundcol);
-   color: color-mix (var(--primarycol), black);
-}
-
-/* hover state on new button with color-mix for the text */
 
 a:hover a:focus{
    color: var(--primarycol)
-}
-
-ul li:nth-child(odd){
-   background-color: var(--backgroundcol);
-}
-
-ul li:first-child{
-   background-color: beige;
 }
 
 blockquote::before{
@@ -140,6 +113,45 @@ blockquote.quote{
 
 /* final change of blockquote colour to body font colour  overrides all previous rules*/
 
-:where(.title, section, ul li:first-child, button:hover){
-   color: var(--backgroundcol)
+.navbar{
+   display:flex;
+   list-style: none;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   text-decoration: none;
 }
+
+li a{
+   gap: 10px 30px;
+   text-decoration: none;
+   color: var(--secondarycol);
+}
+
+a:hover{
+   color: var(--primarycol);
+   text-decoration: underline;
+}
+
+a:focus{
+   color: var(--primarycol);
+   text-decoration: underline;
+}
+
+.cards{
+   display: flex;
+  gap: 1em 1em;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.card{
+  width: 100px;
+  padding: 0.5em;
+  border-radius: 20px;
+  text-align: center;
+  flex: 1;
+  flex-basis: 100px;
+}
+/* when I narrow the browser to about 1/4 of my screen, the last card's text wraps around another row and the card starts to get cut off */
